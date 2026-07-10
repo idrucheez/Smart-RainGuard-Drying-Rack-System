@@ -8,6 +8,7 @@
 4. Add a manual emergency-stop switch.
 5. Enclose the motor and electronics against rain.
 6. Add low-battery voltage monitoring.
+7. Add capacitors near the switches for noise suppression 
 
 ## Control improvements
 
