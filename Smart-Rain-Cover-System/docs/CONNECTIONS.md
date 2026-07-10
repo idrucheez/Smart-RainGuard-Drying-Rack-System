@@ -6,13 +6,11 @@ Use three matched 18650 lithium-ion cells in series as a protected 3S pack.
 
 - Nominal voltage: 11.1 V
 - Fully charged voltage: 12.6 V
-- Use a suitable 3S BMS
-- Add a 7.5–10 A fuse close to battery positive
 
 ## 2. High-Current Motor Path
 
 ```text
-Battery positive -> fuse -> BTS7960 B+
+Battery positive -> BTS7960 B+
 Battery negative ----------> BTS7960 B-
 BTS7960 M+ ----------------> Motor terminal 1
 BTS7960 M- ----------------> Motor terminal 2
@@ -67,31 +65,9 @@ Arduino D7 -> YL-83 DO
 
 Leave `R_IS` and `L_IS` unconnected in the current version.
 
-## 7. Capacitors
 
-### BTS7960 motor supply
 
-Place a 1000–2200 µF, 25 V electrolytic capacitor close to the BTS7960:
-
-```text
-Capacitor + -> B+
-Capacitor - -> B-
-```
-
-### Logic supply
-
-Place a 100–470 µF, 10 V or higher electrolytic capacitor near the Arduino:
-
-```text
-Capacitor + -> 5 V
-Capacitor - -> GND
-```
-
-### Motor terminals
-
-Place a 100 nF ceramic capacitor directly across the two motor terminals.
-
-## 8. First-Test Direction
+## 7. First-Test Direction
 
 Use a very short runtime for the first powered test.
 
