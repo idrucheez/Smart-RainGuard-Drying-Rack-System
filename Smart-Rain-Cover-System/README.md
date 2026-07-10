@@ -32,7 +32,7 @@ The system uses a YL-83 rain sensor, Arduino Uno, BTS7960 motor driver, JGB37-35
 ```text
 3S 18650 battery pack
         |
-        +----> Fuse ----> BTS7960 B+ / B- ----> DC motor
+        +----> BTS7960 B+ / B- ----> DC motor
         |
         +----> LM2596 adjusted to 5.0 V
                      |
@@ -128,31 +128,45 @@ Open this file using Arduino IDE, select **Arduino Uno**, select the correct COM
 
 ## Runtime Calibration
 
-The following value controls the motor's constant-speed run time:
+The following value controls how long the motor continues running after completing the soft-start ramp:
 
 ```cpp
-const unsigned long RUN_TIME_MS = 5000;
+const int runTime = 7000;
 ```
 
-The soft-start ramp also contributes to total travel time.
-
-For a 111 RPM motor:
+The value is measured in milliseconds:
 
 ```text
-Motor speed = 111 / 60 = 1.85 revolutions per second
-Linear speed = spool circumference × 1.85
+7000 ms = 7 seconds
+```
+The motor does not immediately begin at its final PWM value. It first completes the following soft-start sequence:
+
+```cpp
+for (int speed = 0; speed <= 200; speed += 5) {
+  analogWrite(LPWM, speed);
+  delay(30);
+}
 ```
 
-Example using a 20 mm spool diameter:
+
+The same ramp is used in the opposite direction through RPWM.
+
+The approximate soft-start duration is:
 
 ```text
-Circumference = π × 20 mm = approximately 62.8 mm
-Linear speed = 62.8 × 1.85 = approximately 116 mm/s
+Number of steps = 200 / 5 + 1 = 41 steps
+Ramp time = 41 × 30 ms
+Ramp time ≈ 1230 ms
+Ramp time ≈ 1.23 seconds
 ```
 
-A 1 m travel distance would theoretically take about 8.6 seconds at full speed. Actual time will differ because of PWM, battery voltage, load, string winding layers, friction, and spool diameter.
+Therefore, the approximate total motor operating time for one movement is:
 
-Calibrate using short tests and increase the runtime gradually.
+```text
+Total movement time = soft-start time + runTime
+Total movement time ≈ 1.23 s + 7.00 s
+Total movement time ≈ 8.23 seconds
+```
 
 ## Recommended Electrical Protection
 
