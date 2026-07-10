@@ -4,7 +4,6 @@
 
 - [ ] Battery cells are matched and installed in a protected 3S pack.
 - [ ] Battery polarity has been verified.
-- [ ] Fuse is installed near battery positive.
 - [ ] LM2596 input polarity is correct.
 - [ ] LM2596 output has been adjusted to 5.0 V using a multimeter.
 - [ ] Motor is not connected to the 5 V rail.
@@ -13,7 +12,6 @@
 - [ ] RPWM is connected to D5.
 - [ ] LPWM is connected to D6.
 - [ ] Rain sensor DO is connected to D7.
-- [ ] Electrolytic capacitors have correct polarity.
 - [ ] Exposed wires cannot touch each other.
 - [ ] The mechanism can be disconnected quickly in an emergency.
 
