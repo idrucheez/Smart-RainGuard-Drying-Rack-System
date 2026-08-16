@@ -175,3 +175,82 @@ void retractCover() {
     delay(30); // 1.23s acceleration window
   }
 }
+## Bill of Materials
+
+| Component | Technical Specification | Function | Cost (MYR) |
+|---|---|---|:---:|
+| **Arduino Uno R3** | ATmega328P, 16 MHz, 5V logic | Main controller executing FSM and PWM routines | Dev Board |
+| **JGB37-3530 DC Motor** | 12V DC, 111 RPM, 7 kg·cm rated / 24 kg·cm stall | High-torque canopy spool drive | RM 39.90 |
+| **BTS7960 H-Bridge** | 43A peak dual H-bridge motor driver | Bidirectional high-current motor control | RM 19.42 |
+| **YL-83 Rain Sensor** | Nickel-plated rain board with LM393 comparator | Real-time water droplet detection via digital output | RM 6.50 |
+| **LM2596 Buck Converter** | Step-down converter (12V to 5V, 3A max) | Regulated logic power rail[cite: 11, 12, 13] | RM 3.00 |
+| **3S 18650 Battery Pack** | 11.1V nominal (12.6V peak) lithium-ion cells | Portable DC power source[cite: 11, 12, 13] | RM 20.68[cite: 11, 12, 13] |
+| **Canopy & Mechanical Rig** | Hydrophobic parachute fabric, 4mm starter rope, rollers, PVC | Weatherproof shelter and linear sliding assembly[cite: 12, 13] | RM 31.70[cite: 12, 13] |
+| **Protection & Housing** | Weather-sealed box, inline fuse, switch, cabling | Electrical isolation and safety housing[cite: 12, 13] | RM 39.89[cite: 12, 13] |
+| **Total Prototype Cost** | | | **RM 161.09**[cite: 12, 13] |
+
+> **Commercial Viability:** With a targeted 35% commercial margin, the estimated unit selling price is **RM 217.50** (~$48 USD), offering significant cost and power savings compared to permanent awnings or electric dryers[cite: 12, 13].
+
+---
+
+## Results & Validation
+
+### User Research & Problem Validation
+Pre-development field surveys conducted across residential student hostels at Universiti Teknologi PETRONAS established clear market demand:
+
+| Survey Query | Sample Metric | Engineering Takeaway |
+|---|:---:|---|
+| **Clothes Drenched by Rain** | **77%** affected | High frequency of laundry spoilage in semi-outdoor drying areas. |
+| **Product Concept Interest** | **79%** positive | Strong end-user preference for automatic rain-detection mechanisms. |
+| **Daily Routine Usefulness** | **89%** useful | Validates the need for autonomous time-saving hostel utilities. |
+
+### Mechanism Kinematics & Benchtop Testing
+
+<table align="center" width="100%" style="border-collapse: collapse; border: none;">
+  <tr>
+    <td width="50%" align="center" valign="middle" style="padding: 4px; border: none;">
+      <div align="center"><b>Retracted State (Normal Sunlight)</b></div>
+      <a href="images/canopy_retracted.png" target="_blank" style="display: block; margin-top: 4px;">
+        <img src="images/canopy_retracted.png" alt="Retracted Mechanism" width="100%" height="190" style="object-fit: contain; border-radius: 6px; border: 1px solid #30363d; display: block;">
+      </a>
+    </td>
+    <td width="50%" align="center" valign="middle" style="padding: 4px; border: none;">
+      <div align="center"><b>Expanded State (Rain Protection)</b></div>
+      <a href="images/canopy_expanded.png" target="_blank" style="display: block; margin-top: 4px;">
+        <img src="images/canopy_expanded.png" alt="Expanded Mechanism" width="100%" height="190" style="object-fit: contain; border-radius: 6px; border: 1px solid #30363d; display: block;">
+      </a>
+    </td>
+  </tr>
+</table>
+
+* **Actuation Response:** Total deployment/retraction completes in **8.23 seconds** (1.23 s soft-start acceleration ramp + 7.00 s calibrated full-speed transit).
+* **Electrical Decoupling:** Dual-rail topology successfully suppressed motor back-EMF spikes, maintaining zero microcontroller resets during continuous state transitions.
+
+---
+
+## Project Milestones
+
+The 12-week development lifecycle for Engineering Team Project II (MFB2102) was executed across three core phases:
+
+```mermaid
+gantt
+    title 12-Week Development Schedule (ETP II)
+    dateFormat  YYYY-MM-DD
+    axisFormat  W%W
+    
+    section Phase 1: Planning & Sourcing
+    Requirements Meeting & Part Planning :done, p1, 2026-01-05, 2026-01-12
+    Component Procurement                :done, p2, 2026-01-12, 2026-02-09
+    Design Iteration & Tweaking          :done, p3, 2026-01-12, 2026-02-09
+    Product Design Freeze                :done, p4, 2026-02-09, 2026-02-16
+
+    section Phase 2: Build & Integration
+    Electronics & Circuit Assembly       :done, b1, 2026-02-09, 2026-03-02
+    Mechanical Fabrication (Garage 21)   :done, b2, 2026-02-23, 2026-03-23
+    Project Claim Filing                 :done, b3, 2026-02-23, 2026-03-16
+
+    section Phase 3: Validation & Delivery
+    Final Report Compilation             :done, d1, 2026-03-02, 2026-03-23
+    Advisor Presentation & Pre-Audit     :done, d2, 2026-03-16, 2026-03-23
+    ETPx Exhibition & Final Demo         :done, d3, 2026-03-23, 2026-03-30
+```
