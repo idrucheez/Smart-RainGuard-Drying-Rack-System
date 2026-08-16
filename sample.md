@@ -175,6 +175,8 @@ void retractCover() {
     delay(30); // 1.23s acceleration window
   }
 }
+```
+
 ## Bill of Materials
 
 | Component | Technical Specification | Function | Cost (MYR) |
@@ -183,13 +185,13 @@ void retractCover() {
 | **JGB37-3530 DC Motor** | 12V DC, 111 RPM, 7 kg·cm rated / 24 kg·cm stall | High-torque canopy spool drive | RM 39.90 |
 | **BTS7960 H-Bridge** | 43A peak dual H-bridge motor driver | Bidirectional high-current motor control | RM 19.42 |
 | **YL-83 Rain Sensor** | Nickel-plated rain board with LM393 comparator | Real-time water droplet detection via digital output | RM 6.50 |
-| **LM2596 Buck Converter** | Step-down converter (12V to 5V, 3A max) | Regulated logic power rail[cite: 11, 12, 13] | RM 3.00 |
-| **3S 18650 Battery Pack** | 11.1V nominal (12.6V peak) lithium-ion cells | Portable DC power source[cite: 11, 12, 13] | RM 20.68[cite: 11, 12, 13] |
-| **Canopy & Mechanical Rig** | Hydrophobic parachute fabric, 4mm starter rope, rollers, PVC | Weatherproof shelter and linear sliding assembly[cite: 12, 13] | RM 31.70[cite: 12, 13] |
-| **Protection & Housing** | Weather-sealed box, inline fuse, switch, cabling | Electrical isolation and safety housing[cite: 12, 13] | RM 39.89[cite: 12, 13] |
-| **Total Prototype Cost** | | | **RM 161.09**[cite: 12, 13] |
+| **LM2596 Buck Converter** | Step-down converter (12V to 5V, 3A max) | Regulated logic power rail | RM 3.00 |
+| **3S 18650 Battery Pack** | 11.1V nominal (12.6V peak) lithium-ion cells | Portable DC power source | RM 20.68 |
+| **Canopy & Mechanical Rig** | Hydrophobic parachute fabric, 4mm starter rope, rollers, PVC | Weatherproof shelter and linear sliding assembly | RM 31.70 |
+| **Protection & Housing** | Weather-sealed box, inline fuse, switch, cabling | Electrical isolation and safety housing | RM 39.89 |
+| **Total Prototype Cost** | | | **RM 161.09** |
 
-> **Commercial Viability:** With a targeted 35% commercial margin, the estimated unit selling price is **RM 217.50** (~$48 USD), offering significant cost and power savings compared to permanent awnings or electric dryers[cite: 12, 13].
+> **Commercial Viability:** With a targeted 35% commercial margin, the estimated unit selling price is **RM 217.50** (~$48 USD), offering significant cost and power savings compared to permanent awnings or electric dryers.
 
 ---
 
