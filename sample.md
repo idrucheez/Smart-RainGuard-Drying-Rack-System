@@ -103,10 +103,7 @@ graph LR
         DRIVER -->|"Bidirectional Drive"| MOTOR
         MOTOR --> SPOOL
     end
-
-    classDef pwr fill:#F39C12,stroke:#fff,stroke-width:1px,color:#fff;
-    classDef ctrl fill:#00979D,stroke:#fff,stroke-width:1px,color:#fff;
-    classDef act fill:#E34F26,stroke:#fff,stroke-width:1px,color:#fff;
+	
     class Power pwr;
     class Control ctrl;
     class Drive act;
