@@ -1,6 +1,6 @@
 # Smart Rain Cover System
 
-An Arduino-based automatic rain cover system that detects rainfall and retracts or extends a clothes-drying cover using a 12 V DC geared motor.
+A Arduino-based automatic rain cover system that detects rainfall and retracts or extends a clothes-drying cover using a 12 V DC geared motor.
 
 The system uses a YL-83 rain sensor, Arduino Uno, BTS7960 motor driver, JGB37-3530 geared DC motor, LM2596 buck converter, and a 3-cell 18650 battery pack.
 
