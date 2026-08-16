@@ -70,7 +70,7 @@
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 <details open>
 <summary><strong>📊 Interactive Signal & Power Topology</strong></summary>
@@ -110,7 +110,9 @@ graph LR
     class Power pwr;
     class Control ctrl;
     class Drive act;
+```
 
+---
 
 ## Hardware & Circuit Schematic
 
